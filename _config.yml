@@ -1,0 +1,5 @@
+title: "My Jekyll Site"
+description: "A static site powered by Jekyll."
+baseurl: "/jekylltest"  # For GitHub Pages, use "/repo-name" if project repo.
+url: "workersmakepossible.com"      # Your domain or GitHub Pages URL.
+theme: minima
