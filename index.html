@@ -211,9 +211,10 @@
                         We deepen public understanding of labour issues by offering critical labour analysis, rallying workers around key demands, and supporting workers by providing direct assistance when they face crises. Since workers' perspectives are not often covered by the mainstream media, our work is also focused on telling these important stories, and mobilising wider public support.
                     </div>
 
-                   <div class="pl-3">
+<!-- Latest Substack Post Embed — Workers Make Possible -->
+<!-- Drop this snippet wherever you want the "Newest Commentary" box to appear -->
 
-<div id="latest-substack-box">
+<div id="latest-substack-box" style="margin-top: 32px;">
   <!-- Loading state -->
   <div id="substack-loading" style="
     background-color: #FDD24F;
@@ -236,7 +237,6 @@
       var post = data.items[0];
 
       /* ── Pull thumbnail ── */
-      /* rss2json exposes it as post.thumbnail or post.enclosure.link */
       var img = post.thumbnail || (post.enclosure && post.enclosure.link) || "";
 
       /* ── Strip HTML from description, cap at 200 chars ── */
@@ -261,8 +261,7 @@
           'border-radius:28px;' +
           'border:3px solid #C9112B;' +
           'padding:24px;' +
-          'max-width:520px;' +
-          'margin:0 auto;' +
+          'width:100%;' +        /* spans full width of its container */
         '">' +
 
           /* label */
@@ -301,15 +300,12 @@
       document.getElementById("latest-substack-box").innerHTML = html;
     })
     .catch(function() {
-      /* Graceful fallback if fetch fails */
       document.getElementById("substack-loading").innerHTML =
         '<p style="margin:0;">Read our latest commentary on ' +
         '<a href="https://workersmakepossible.substack.com/" style="color:#C9112B;font-weight:bold;">Substack</a>.</p>';
     });
 })();
 </script>
-
-                </div>
                    </div>
 
                 <div class="col-4 pl-5">
@@ -531,13 +527,101 @@
         
     </div>
 
-    <div class="container p-5">
-        <div class="row h3 pb-3 justify-content-center">Newest Commentary</div>
+<!-- Latest Substack Post Embed — Workers Make Possible -->
+<!-- Drop this snippet wherever you want the "Newest Commentary" box to appear -->
 
-        <div class="substack-post-embed mx-auto"><p lang="en">The Platform Workers Act: hard-won representation for gig workers poses opportunities and threats for the riders’ movement by WorkersMakePossible</p><p>Independent food delivery rider groups and collective action played a pivotal role in shaping the Act that was passed in September 2024, but the Act could restrict further organising efforts.</p><a data-post-link href="https://workersmakepossible.substack.com/p/the-platform-workers-act-hard-won">Read on Substack</a></div><script async src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>
+<div id="latest-substack-box" style="margin-top: 32px;">
+  <!-- Loading state -->
+  <div id="substack-loading" style="
+    background-color: #FDD24F;
+    border-radius: 28px;
+    border: 3px solid #C9112B;
+    padding: 24px;
+    text-align: center;
+    color: #37375E;
+    font-style: italic;
+  ">Loading latest post…</div>
+</div>
 
+<script>
+(function() {
+  var FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed";
 
-    </div>
+  fetch(FEED_URL)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var post = data.items[0];
+
+      /* ── Pull thumbnail ── */
+      var img = post.thumbnail || (post.enclosure && post.enclosure.link) || "";
+
+      /* ── Strip HTML from description, cap at 200 chars ── */
+      var plain = post.description.replace(/<[^>]+>/g, "").trim();
+      var excerpt = plain.length > 200 ? plain.slice(0, 200).trim() + "…" : plain;
+
+      /* ── Format date ── */
+      var date = post.pubDate
+        ? new Date(post.pubDate).toLocaleDateString("en-GB", { day:"numeric", month:"long", year:"numeric" })
+        : "";
+
+      /* ── Build HTML ── */
+      var imgHTML = img ? (
+        '<div style="width:100%; overflow:hidden; border-radius:16px; margin-bottom:16px;">' +
+          '<img src="' + img + '" alt="" style="width:100%; display:block; object-fit:cover; max-height:220px;">' +
+        '</div>'
+      ) : "";
+
+      var html =
+        '<div style="' +
+          'background-color:#FDD24F;' +
+          'border-radius:28px;' +
+          'border:3px solid #C9112B;' +
+          'padding:24px;' +
+          'width:100%;' +        /* spans full width of its container */
+        '">' +
+
+          /* label */
+          '<div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#C9112B;margin-bottom:12px;">Newest Commentary</div>' +
+
+          /* thumbnail */
+          imgHTML +
+
+          /* title */
+          '<h3 style="margin:0 0 8px;font-size:1.1rem;font-weight:700;line-height:1.4;">' +
+            '<a href="' + post.link + '" target="_blank" rel="noopener" style="color:#37375E;text-decoration:none;">' +
+              post.title +
+            '</a>' +
+          '</h3>' +
+
+          /* date */
+          (date ? '<p style="font-size:0.8rem;color:#555;margin:0 0 10px;">' + date + '</p>' : '') +
+
+          /* excerpt */
+          '<p style="font-size:0.92rem;color:#37375E;line-height:1.6;margin:0 0 16px;">' + excerpt + '</p>' +
+
+          /* CTA button */
+          '<a href="' + post.link + '" target="_blank" rel="noopener" style="' +
+            'display:inline-block;' +
+            'background-color:#C9112B;' +
+            'color:white;' +
+            'border-radius:20px;' +
+            'padding:8px 20px;' +
+            'font-size:0.85rem;' +
+            'font-weight:700;' +
+            'text-decoration:none;' +
+          '">Read on Substack →</a>' +
+
+        '</div>';
+
+      document.getElementById("latest-substack-box").innerHTML = html;
+    })
+    .catch(function() {
+      document.getElementById("substack-loading").innerHTML =
+        '<p style="margin:0;">Read our latest commentary on ' +
+        '<a href="https://workersmakepossible.substack.com/" style="color:#C9112B;font-weight:bold;">Substack</a>.</p>';
+    });
+})();
+</script>
 
 
     <div class="p-5">
