@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<style>
+  .post-title   { color: #C9112B; font-weight: bold; margin-bottom: 6px; }
+  .post-meta    { font-size: 0.9rem; color: #555; margin-bottom: 24px; }
+  .post-content { color: #37375E; line-height: 1.8; font-size: 1.05rem; }
+  .post-content h2, .post-content h3 { color: #C9112B; margin-top: 1.5rem; }
+  .post-content img { max-width: 100%; border-radius: 12px; margin: 16px 0; }
+  .post-content a { color: #C9112B; }
+  .post-content blockquote {
+    border-left: 4px solid #FDD24F;
+    padding-left: 16px;
+    color: #555;
+    font-style: italic;
+  }
+  .back-link { 
+    display: inline-block; 
+    margin-bottom: 20px; 
+    color: #37375E; 
+    font-weight: bold;
+  }
+  .back-link:hover { color: #C9112B; text-decoration: none; }
+  hr.post-divider { border-color: #C9112B; }
+</style>
+
+<a class="back-link" href="{{ '/blog/' | relative_url }}">&larr; Back to Blog</a>
+
+<h1 class="post-title">{{ page.title }}</h1>
+<p class="post-meta">
+  {{ page.date | date: "%B %-d, %Y" }}
+  {% if page.author %}&middot; {{ page.author }}{% endif %}
+  {% if page.tags.size > 0 %}&middot; 
+    {% for tag in page.tags %}<span class="badge badge-warning">{{ tag }}</span> {% endfor %}
+  {% endif %}
+</p>
+<hr class="post-divider">
+
+<div class="post-content">
+  {{ content }}
+</div>
