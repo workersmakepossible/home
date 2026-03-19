@@ -213,21 +213,103 @@
 
                    <div class="p-5">
                     <div class="row h3 pl-3 justify-content-center">Newest Commentary</div>
+<!-- Latest Substack Post Embed — Workers Make Possible -->
+<!-- Drop this snippet wherever you want the "Newest Commentary" box to appear -->
 
-<div id="latest-substack"></div>
+<div id="latest-substack-box">
+  <!-- Loading state -->
+  <div id="substack-loading" style="
+    background-color: #FDD24F;
+    border-radius: 28px;
+    border: 3px solid #C9112B;
+    padding: 24px;
+    text-align: center;
+    color: #37375E;
+    font-style: italic;
+  ">Loading latest post…</div>
+</div>
+
 <script>
-  fetch("https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed")
-    .then(r => r.json())
-    .then(data => {
-      const post = data.items[0];
-      document.getElementById("latest-substack").innerHTML = `
-        <div class="substack-post-embed mx-auto">
-          <p lang="en"><strong>${post.title}</strong> by WorkersMakePossible</p>
-          <p>${post.description.replace(/<[^>]+>/g, '').slice(0, 200)}...</p>
-          <a href="${post.link}">Read on Substack</a>
-        </div>
-      `;
+(function() {
+  var FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed";
+
+  fetch(FEED_URL)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var post = data.items[0];
+
+      /* ── Pull thumbnail ── */
+      /* rss2json exposes it as post.thumbnail or post.enclosure.link */
+      var img = post.thumbnail || (post.enclosure && post.enclosure.link) || "";
+
+      /* ── Strip HTML from description, cap at 200 chars ── */
+      var plain = post.description.replace(/<[^>]+>/g, "").trim();
+      var excerpt = plain.length > 200 ? plain.slice(0, 200).trim() + "…" : plain;
+
+      /* ── Format date ── */
+      var date = post.pubDate
+        ? new Date(post.pubDate).toLocaleDateString("en-GB", { day:"numeric", month:"long", year:"numeric" })
+        : "";
+
+      /* ── Build HTML ── */
+      var imgHTML = img ? (
+        '<div style="width:100%; overflow:hidden; border-radius:16px; margin-bottom:16px;">' +
+          '<img src="' + img + '" alt="" style="width:100%; display:block; object-fit:cover; max-height:220px;">' +
+        '</div>'
+      ) : "";
+
+      var html =
+        '<div style="' +
+          'background-color:#FDD24F;' +
+          'border-radius:28px;' +
+          'border:3px solid #C9112B;' +
+          'padding:24px;' +
+          'max-width:520px;' +
+          'margin:0 auto;' +
+        '">' +
+
+          /* label */
+          '<div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#C9112B;margin-bottom:12px;">Newest Commentary</div>' +
+
+          /* thumbnail */
+          imgHTML +
+
+          /* title */
+          '<h3 style="margin:0 0 8px;font-size:1.1rem;font-weight:700;line-height:1.4;">' +
+            '<a href="' + post.link + '" target="_blank" rel="noopener" style="color:#37375E;text-decoration:none;">' +
+              post.title +
+            '</a>' +
+          '</h3>' +
+
+          /* date */
+          (date ? '<p style="font-size:0.8rem;color:#555;margin:0 0 10px;">' + date + '</p>' : '') +
+
+          /* excerpt */
+          '<p style="font-size:0.92rem;color:#37375E;line-height:1.6;margin:0 0 16px;">' + excerpt + '</p>' +
+
+          /* CTA button */
+          '<a href="' + post.link + '" target="_blank" rel="noopener" style="' +
+            'display:inline-block;' +
+            'background-color:#C9112B;' +
+            'color:white;' +
+            'border-radius:20px;' +
+            'padding:8px 20px;' +
+            'font-size:0.85rem;' +
+            'font-weight:700;' +
+            'text-decoration:none;' +
+          '">Read on Substack →</a>' +
+
+        '</div>';
+
+      document.getElementById("latest-substack-box").innerHTML = html;
+    })
+    .catch(function() {
+      /* Graceful fallback if fetch fails */
+      document.getElementById("substack-loading").innerHTML =
+        '<p style="margin:0;">Read our latest commentary on ' +
+        '<a href="https://workersmakepossible.substack.com/" style="color:#C9112B;font-weight:bold;">Substack</a>.</p>';
     });
+})();
 </script>
 
                 </div>
