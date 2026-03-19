@@ -617,12 +617,12 @@
         
     </div>
 
-<!-- Latest Substack Post Embed — Workers Make Possible -->
-<!-- Drop this snippet wherever you want the "Newest Commentary" box to appear -->
+<!-- Latest Substack Post Embed — Workers Make Possible — MOBILE VERSION -->
+<!-- Drop this snippet in your mobile section -->
 
-<div id="latest-substack-box" style="margin-top: 32px;">
+<div id="latest-substack-box-mobile" style="margin-top: 32px;">
   <!-- Loading state -->
-  <div id="substack-loading" style="
+  <div id="substack-loading-mobile" style="
     background-color: #FDD24F;
     border-radius: 28px;
     border: 3px solid #C9112B;
@@ -667,7 +667,7 @@
           'border-radius:28px;' +
           'border:3px solid #C9112B;' +
           'padding:24px;' +
-          'width:100%;' +        /* spans full width of its container */
+          'width:100%;' +
         '">' +
 
           /* label */
@@ -703,10 +703,10 @@
 
         '</div>';
 
-      document.getElementById("latest-substack-box").innerHTML = html;
+      document.getElementById("latest-substack-box-mobile").innerHTML = html;
     })
     .catch(function() {
-      document.getElementById("substack-loading").innerHTML =
+      document.getElementById("substack-loading-mobile").innerHTML =
         '<p style="margin:0;">Read our latest commentary on ' +
         '<a href="https://workersmakepossible.substack.com/" style="color:#C9112B;font-weight:bold;">Substack</a>.</p>';
     });
@@ -723,8 +723,8 @@
      RECOMMENDED BOX — Mobile
      
      HOW TO UPDATE:
-     - Instagram: change INSTA_URL, INSTA_IMG, INSTA_CAPTION
-     - TikTok:    change TIKTOK_URL, TIKTOK_IMG, TIKTOK_CAPTION
+     - Instagram: change INSTA_URL_M, INSTA_IMG_M, INSTA_CAPTION_M
+     - TikTok:    change TIKTOK_URL_M, TIKTOK_IMG_M, TIKTOK_CAPTION_M
      - Substack:  updates automatically — nothing to change!
 ═══════════════════════════════════════════════════════════ -->
 
@@ -732,26 +732,31 @@
   <div class="h3 pt-4">Recommended</div>
   <hr color="#37375E">
 
-  <!-- ── CARD 1: Instagram ── -->
+  <!-- ── CARD 1: Instagram (update manually) ── -->
+  <script>
+    var INSTA_URL_M     = INSTA_URL;
+	var INSTA_IMG_M     = INSTA_IMG;
+	var INSTA_CAPTION_M = INSTA_CAPTION;
+  </script>
 
   <div class="articlecard pb-3">
     <span class="articletitle h5 pt-4">
-      <a id="insta-link" href="#" target="_blank" rel="noopener" style="color:#37375E;">
+      <a id="insta-link-m" href="#" target="_blank" rel="noopener" style="color:#37375E;">
         Latest on Instagram
       </a>
     </span>
     <div class="row no-gutters">
       <div class="col-6">
-        <a id="insta-link-2" href="#" target="_blank" rel="noopener">
-          <img id="insta-img" src="" alt="Latest Instagram post" class="img-responsive thumbnailpic">
+        <a id="insta-link-2-m" href="#" target="_blank" rel="noopener">
+          <img id="insta-img-m" src="" alt="Latest Instagram post" class="img-responsive thumbnailpic">
         </a>
       </div>
       <div class="col-6 articledescbox pl-2 pt-0">
-        <div class="articledesc" id="insta-caption"></div>
+        <div class="articledesc" id="insta-caption-m"></div>
       </div>
     </div>
     <div style="margin-top:8px;">
-      <a id="insta-link-3" href="#" target="_blank" rel="noopener" style="
+      <a id="insta-link-3-m" href="#" target="_blank" rel="noopener" style="
         display:inline-block;
         background-color:#C9112B;
         color:white;
@@ -765,35 +770,40 @@
   </div>
 
   <script>
-    document.getElementById("insta-link").href    = INSTA_URL;
-    document.getElementById("insta-link-2").href  = INSTA_URL;
-    document.getElementById("insta-link-3").href  = INSTA_URL;
-    document.getElementById("insta-img").src      = INSTA_IMG;
-    document.getElementById("insta-caption").textContent = INSTA_CAPTION;
+    document.getElementById("insta-link-m").href    = INSTA_URL_M;
+    document.getElementById("insta-link-2-m").href  = INSTA_URL_M;
+    document.getElementById("insta-link-3-m").href  = INSTA_URL_M;
+    document.getElementById("insta-img-m").src      = INSTA_IMG_M;
+    document.getElementById("insta-caption-m").textContent = INSTA_CAPTION_M;
   </script>
 
   <hr color="#C9112B" style="opacity:0.3;">
 
-  <!-- ── CARD 2: TikTok ── -->
+  <!-- ── CARD 2: TikTok (update manually) ── -->
+  <script>
+    var TIKTOK_URL_M     = TIKTOK_URL;
+	var TIKTOK_IMG_M     = TIKTOK_IMG;
+	var TIKTOK_CAPTION_M = TIKTOK_CAPTION;
+  </script>
 
   <div class="articlecard pb-3">
     <span class="articletitle h5 pt-4">
-      <a id="tiktok-link" href="#" target="_blank" rel="noopener" style="color:#37375E;">
+      <a id="tiktok-link-m" href="#" target="_blank" rel="noopener" style="color:#37375E;">
         Latest on TikTok
       </a>
     </span>
     <div class="row no-gutters">
       <div class="col-6">
-        <a id="tiktok-link-2" href="#" target="_blank" rel="noopener">
-          <img id="tiktok-img" src="" alt="Latest TikTok post" class="img-responsive thumbnailpic">
+        <a id="tiktok-link-2-m" href="#" target="_blank" rel="noopener">
+          <img id="tiktok-img-m" src="" alt="Latest TikTok post" class="img-responsive thumbnailpic">
         </a>
       </div>
       <div class="col-6 articledescbox pl-2 pt-0">
-        <div class="articledesc" id="tiktok-caption"></div>
+        <div class="articledesc" id="tiktok-caption-m"></div>
       </div>
     </div>
     <div style="margin-top:8px;">
-      <a id="tiktok-link-3" href="#" target="_blank" rel="noopener" style="
+      <a id="tiktok-link-3-m" href="#" target="_blank" rel="noopener" style="
         display:inline-block;
         background-color:#37375E;
         color:white;
@@ -807,11 +817,11 @@
   </div>
 
   <script>
-    document.getElementById("tiktok-link").href    = TIKTOK_URL;
-    document.getElementById("tiktok-link-2").href  = TIKTOK_URL;
-    document.getElementById("tiktok-link-3").href  = TIKTOK_URL;
-    document.getElementById("tiktok-img").src      = TIKTOK_IMG;
-    document.getElementById("tiktok-caption").textContent = TIKTOK_CAPTION;
+    document.getElementById("tiktok-link-m").href    = TIKTOK_URL_M;
+    document.getElementById("tiktok-link-2-m").href  = TIKTOK_URL_M;
+    document.getElementById("tiktok-link-3-m").href  = TIKTOK_URL_M;
+    document.getElementById("tiktok-img-m").src      = TIKTOK_IMG_M;
+    document.getElementById("tiktok-caption-m").textContent = TIKTOK_CAPTION_M;
   </script>
 
   <hr color="#C9112B" style="opacity:0.3;">
@@ -829,9 +839,9 @@
     fetch("https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed")
       .then(function(r) { return r.json(); })
       .then(function(data) {
-        var post  = data.items[0];
-        var img   = post.thumbnail || (post.enclosure && post.enclosure.link) || "";
-        var plain = post.description.replace(/<[^>]+>/g, "").trim();
+        var post    = data.items[0];
+        var img     = post.thumbnail || (post.enclosure && post.enclosure.link) || "";
+        var plain   = post.description.replace(/<[^>]+>/g, "").trim();
         var excerpt = plain.length > 120 ? plain.slice(0, 120).trim() + "…" : plain;
 
         var imgHTML = img
@@ -866,7 +876,7 @@
   </script>
 
 </div>
-<!-- end recbox -->
+<!-- end recbox-mobile -->
 					
                 </div>
             </div>
