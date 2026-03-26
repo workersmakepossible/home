@@ -20,10 +20,10 @@ colors:
   accent: "#FDD24F"        # yellow
 
 # ─── ASSETS (GitHub raw URLs) ────────────────────────────────
-assets_base: "https://github.com/workersmakepossible/labourday/blob/main/assets"
+assets_base: "https://github.com/workersmakepossible/home/blob/main/assets"
 
-logo_url: "https://github.com/workersmakepossible/labourday/blob/main/assets/wmp_logo.png?raw=true"
-banner_url: "https://github.com/workersmakepossible/labourday/blob/main/assets/LD26_Banner.png?raw=true"
+logo_url: "https://github.com/workersmakepossible/home/blob/main/assets/wmp_logo.png?raw=true"
+banner_url: "https://github.com/workersmakepossible/home/blob/main/assets/LD26_Banner.png?raw=true"
 
 # ─── NAV LINKS ───────────────────────────────────────────────
 nav_links:
