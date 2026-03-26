@@ -405,11 +405,13 @@ layout: defaultld
     <div>{{ slot.description }}</div>
     {% if forloop.index == 1 %}
     {% for booth in site.data.programme.booths %}
+    <!-- BOOTH MOBILE PART 
     <div class="mt-3">
       <a href="{{ booth.url }}" class="boothlink">{{ booth.name }}</a>
       <img src="{{ booth.image }}" style="width:100%; margin-top:10px; margin-bottom:10px;">
       {% for para in booth.description %}<p>{{ para }}</p>{% endfor %}
     </div>
+    -->
     {% endfor %}
     {% endif %}
     {% endfor %}
