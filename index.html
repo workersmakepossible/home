@@ -7,893 +7,549 @@
 
 <html lang="en">
 <head>
-	<!-- Required meta tags -->
 	<meta charset="utf-8">
-	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"><!-- Bootstrap CSS -->
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 	<link rel="icon" href="https://github.com/workersmakepossible/labourday/blob/main/assets/wmp_logo.png?raw=true">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="{{ '/assets/css/labourday.css' | relative_url }}">
-    
-    <style media="all">
-    
-    .mobile-display{display:none}
-    .desktop-display{display:block}
-    @media (max-width:1206px){
-        .desktop-display {display:none}
-        .mobile-display {display:block}
-    } 
 
-    </style>
+	<style media="all">
+		.mobile-display  { display: none; }
+		.desktop-display { display: block; }
+		@media (max-width: 1206px) {
+			.desktop-display { display: none; }
+			.mobile-display  { display: block; }
+		}
+	</style>
 
 	<title>Workers Make Possible!</title>
 </head>
-  
+
 <body>
 
-    <div class="desktop-display">
-        <style>
-            .titlebanner{
-                background-color: #FDD24F;
-                height: 60px; 
-                position: fixed;
-                top: 0px;
-                left: 0px;
-                z-index: 999;
-            }
+<!-- ═══════════════════════════════════════════════════════════
+     DESKTOP
+═══════════════════════════════════════════════════════════ -->
+<div class="desktop-display">
 
-            .title{
-                position: fixed;
-                left: 50%;
-                transform: translate(-50%, 0);
-                font-weight: bold;
-                z-index: 999;
-                color: #C9112B; 
-            }
+	<style>
+		/* ── Layout chrome ── */
+		.titlebanner  { background-color:#FDD24F; height:60px; position:fixed; top:0; left:0; z-index:999; }
+		.title        { position:fixed; left:50%; transform:translate(-50%,0); font-weight:bold; z-index:999; color:#C9112B; }
+		.logo         { position:fixed; z-index:1000; height:130px; width:130px; background-color:transparent; top:-5px; }
+		.deskybutton  { width:100%; }
+		.navbanner    { background-color:white; height:50px; position:fixed; top:60px; z-index:999; }
+		.navcol       { position:relative; left:150px; margin-right:30px; top:5px; }
+		.navbutton    { background-color:transparent; border-radius:20px; color:#37375E; }
+		.navbutton:hover    { background-color:#FDD24F; font-weight:bold; }
+		.currentpage  { background-color:#FDD24F; font-weight:bold; }
+		.moveleft     { margin-left:130px; }
 
-            .h3{
-                color: #C9112B;
-            }
+		/* ── Page start (offset for fixed bars) ── */
+		.start        { position:relative; top:130px; padding-bottom:130px; }
 
-            .moveleft{
-                margin-left: 130px; 
-            }
+		/* ── Cards / boxes ── */
+		.recbox       { background-color:#FDD24F; border-radius:28px; border:3px solid #C9112B; margin-bottom:20px; }
 
-            .logo{
-                position: fixed;
-                z-index: 1000;
-                height: 130px;
-                width: 130px;
-                background-color: transparent;
-                top: -5px;
-                
-            }
+		/* ── Responsive iframe ── */
+		.iframeholder     { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; }
+		.responsive-iframe{ position:absolute; top:0; left:0; width:100%; height:100%; z-index:900; }
 
-            .deskybutton{
-                width: 100%; 
-            }
+		/* ── Links ── */
+		a       { color:#37375E; }
+		a:hover { color:#37375E; text-decoration:none; }
 
-            .navbanner{
-                background-color: white;
-                height: 50px; 
-                position: fixed;
-                top: 60px; 
-                z-index: 999;
-            }
+		/* ── Article cards ── */
+		.articledescbox { overflow:hidden; }
+		.articledesc    { margin-top:10px; overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:5; line-clamp:5; }
+		.thumbnailpic   { width:100%; margin-top:10px; }
 
-            .start{
-                position: relative;
-                top: 130px; 
-            }
+		/* ── About section ── */
+		.abouttitle     { position:relative; padding-top:24px; font-weight:600; color:#C9112B; }
 
-            .navcol{
-                position: relative;
-                left: 150px; 
-                margin-right:30px;
-                top: 5px;
-            }
+		/* ── Headings ── */
+		.h3 { color:#C9112B; }
+	</style>
 
-            .navbutton{
-                background-color: transparent;
-                border-radius: 20px;
-                color: #37375E;
-            }
+	<!-- Fixed nav chrome -->
+	<div class="titlebanner container-fluid"></div>
+	<div class="title container h1"><span class="moveleft">Workers Make Possible</span></div>
+	<div class="container h1">
+		<button class="logo btn btn-lg btn-block">
+			<img src="https://github.com/workersmakepossible/labourday/blob/main/assets/wmp_logo.png?raw=true"
+				class="deskybutton img-responsive" alt="WMP logo">
+		</button>
+	</div>
 
-            .navbutton:hover{
-                background-color: #FDD24F;
-                font-weight: bold;
-            }
-
-            .recbox{
-                background-color: #FDD24F;
-                border-radius: 28px;
-                border-width: 3px;
-                border-style: solid;
-                border-color: #C9112B;
-                margin-bottom: 20px;
-            }
-
-            .iframeholder{
-                position: relative;
-                padding-bottom: 56.25%;
-                height:0;
-            }
-
-            .responsive-iframe{
-                position:absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 56.25%;
-                z-index: 900;
-            }
-
-            a{
-                color:#37375E;
-            }
-
-            a:hover{
-                color:#37375E;
-                text-decoration: none;
-            }
-
-            .articledescbox{
-                overflow: hidden;
-            }
-
-            .articledesc{
-                margin-top:10px;
-                overflow: hidden;
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 5; /* start showing ellipsis when 3rd line is reached */
-                        line-clamp: 5;
-            }
-
-            .abouttitle{
-                position:relative;
-                padding-top: 55%;
-                font-weight: 600;
-                color: #C9112B;
-            }
-
-            .thumbnailpic{
-                width: 100%;
-                margin-top: 10px;
-            }
-
-            .currentpage{
-                background-color: #FDD24F;
-                font-weight: bold; 
-            }
-        </style>
-        
-        
-    <!--NAVbanner-->
-    <div class="titlebanner container-fluid"></div>
-    <div class="title container h1"><span class="moveleft">Workers Make Possible</span></div>  
-    <div class="container h1">
-        <button class="logo btn btn-lg btn-block">
-            <img src="https://github.com/workersmakepossible/labourday/blob/main/assets/wmp_logo.png?raw=true" 
-            class="deskybutton img-responsive">
-        </button>
-    </div>
-
-    <div class="navbanner container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="navcol"><button class="btn navbutton currentpage"><a href="https://workersmakepossible.com">Home</a></button></div>
-                <div class="navcol"><button class="btn navbutton"><a href="https://workersmakepossible.com/labourday">Labour Day</a></button></div>
-                <div class="navcol"><button class="btn navbutton"><a href="https://endlorryrides.com">End Lorry Rides, Save Workers' Lives</a></button></div>
-                <div class="navcol"><button class="btn navbutton"><a href="https://workersmakepossible.substack.com/">Commentary</a></button></div>
+	<div class="navbanner container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="navcol"><button class="btn navbutton currentpage"><a href="https://workersmakepossible.com">Home</a></button></div>
+				<div class="navcol"><button class="btn navbutton"><a href="https://workersmakepossible.com/labourday">Labour Day</a></button></div>
+				<div class="navcol"><button class="btn navbutton"><a href="https://endlorryrides.com">End Lorry Rides, Save Workers' Lives</a></button></div>
+				<div class="navcol"><button class="btn navbutton"><a href="https://workersmakepossible.substack.com/">Commentary</a></button></div>
 				<div class="navcol"><button class="btn navbutton"><a href="/blog/">Blog</a></button></div>
-            </div>
-            
-        </div>
-    </div>
-    
-    
-    <div class="start">
-        <div class="container">
-            <div class="row justify-content-center">
+			</div>
+		</div>
+	</div>
 
-                <div class="col-8 iframeholder">
-                
-                    <div class="row">
-                        <iframe
-                        class="responsive-iframe"
-                        src="https://www.youtube.com/embed/m-WORbBIMA0"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                    </div>
+	<!-- Page content -->
+	<div class="start">
+		<div class="container">
+			<div class="row justify-content-center">
 
-                    <div class="row h3 pl-3 abouttitle">Workers Make Possible is committed to advancing workers’ rights in Singapore. </div>
-                    <div class="row pl-3 abouttext">
-                        We deepen public understanding of labour issues by offering critical labour analysis, rallying workers around key demands, and supporting workers by providing direct assistance when they face crises. Since workers' perspectives are not often covered by the mainstream media, our work is also focused on telling these important stories, and mobilising wider public support.
-                    </div>
+				<!-- Left column: video + about + Substack embed -->
+				<div class="col-8">
 
-<!-- Latest Substack Post Embed — Workers Make Possible -->
-<!-- Drop this snippet wherever you want the "Newest Commentary" box to appear -->
+					<!-- Responsive iframe wrapper (height:0 + padding-bottom trick requires no extra row wrapper) -->
+					<div class="iframeholder">
+						<iframe
+							class="responsive-iframe"
+							src="https://www.youtube.com/embed/m-WORbBIMA0"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen></iframe>
+					</div>
 
-<div id="latest-substack-box" style="margin-top: 32px;">
-  <!-- Loading state -->
-  <div id="substack-loading" style="
-    background-color: #FDD24F;
-    border-radius: 28px;
-    border: 3px solid #C9112B;
-    padding: 24px;
-    text-align: center;
-    color: #37375E;
-    font-style: italic;
-  ">Loading latest post…</div>
+					<div class="h3 abouttitle">Workers Make Possible is committed to advancing workers' rights in Singapore.</div>
+					<div class="abouttext mt-2">
+						We deepen public understanding of labour issues by offering critical labour analysis, rallying workers around key demands, and supporting workers by providing direct assistance when they face crises. Since workers' perspectives are not often covered by the mainstream media, our work is also focused on telling these important stories, and mobilising wider public support.
+					</div>
+
+					<!-- Latest Substack embed (auto-updates) -->
+					<div id="latest-substack-box" style="margin-top:32px;">
+						<div id="substack-loading" style="background-color:#FDD24F;border-radius:28px;border:3px solid #C9112B;padding:24px;text-align:center;color:#37375E;font-style:italic;">
+							Loading latest post…
+						</div>
+					</div>
+
+					<script>
+					(function() {
+						var FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed";
+						fetch(FEED_URL)
+							.then(function(r) { return r.json(); })
+							.then(function(data) {
+								var post    = data.items[0];
+								var img     = post.thumbnail || (post.enclosure && post.enclosure.link) || "";
+								var plain   = post.description.replace(/<[^>]+>/g, "").trim();
+								var excerpt = plain.length > 200 ? plain.slice(0, 200).trim() + "…" : plain;
+								var date    = post.pubDate
+									? new Date(post.pubDate).toLocaleDateString("en-GB", { day:"numeric", month:"long", year:"numeric" })
+									: "";
+								var imgHTML = img
+									? '<div style="width:100%;overflow:hidden;border-radius:16px;margin-bottom:16px;"><img src="' + img + '" alt="" style="width:100%;display:block;object-fit:cover;max-height:220px;"></div>'
+									: "";
+								var html =
+									'<div style="background-color:#FDD24F;border-radius:28px;border:3px solid #C9112B;padding:24px;width:100%;">' +
+										'<div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#C9112B;margin-bottom:12px;">Newest Commentary</div>' +
+										imgHTML +
+										'<h3 style="margin:0 0 8px;font-size:1.1rem;font-weight:700;line-height:1.4;"><a href="' + post.link + '" target="_blank" rel="noopener" style="color:#37375E;text-decoration:none;">' + post.title + '</a></h3>' +
+										(date ? '<p style="font-size:0.8rem;color:#555;margin:0 0 10px;">' + date + '</p>' : '') +
+										'<p style="font-size:0.92rem;color:#37375E;line-height:1.6;margin:0 0 16px;">' + excerpt + '</p>' +
+										'<a href="' + post.link + '" target="_blank" rel="noopener" style="display:inline-block;background-color:#C9112B;color:white;border-radius:20px;padding:8px 20px;font-size:0.85rem;font-weight:700;text-decoration:none;">Read on Substack →</a>' +
+									'</div>';
+								document.getElementById("latest-substack-box").innerHTML = html;
+							})
+							.catch(function() {
+								document.getElementById("substack-loading").innerHTML =
+									'<p style="margin:0;">Read our latest commentary on <a href="https://workersmakepossible.substack.com/" style="color:#C9112B;font-weight:bold;">Substack</a>.</p>';
+							});
+					})();
+					</script>
+
+				</div>
+				<!-- /col-8 -->
+
+				<!-- Right column: Recommended box -->
+				<div class="col-4 pl-5">
+
+					<!-- HOW TO UPDATE:
+					     Instagram: change site.data.social.instagram.*
+					     TikTok:    change site.data.social.tiktok.*
+					     Substack:  auto-updates, nothing to change -->
+
+					<div class="recbox container pl-4 pr-4">
+						<div class="h3 pt-4">Recommended</div>
+						<hr color="#37375E">
+
+						<!-- Card 1: Instagram -->
+						<script>
+							var INSTA_URL     = "{{ site.data.social.instagram.url }}";
+							var INSTA_IMG     = "{{ site.data.social.instagram.image }}";
+							var INSTA_CAPTION = "{{ site.data.social.instagram.caption }}";
+						</script>
+
+						<div class="articlecard pb-3">
+							<span class="articletitle h5 pt-4">
+								<a id="insta-link" href="#" target="_blank" rel="noopener" style="color:#37375E;">Latest on Instagram</a>
+							</span>
+							<div class="row no-gutters">
+								<div class="col-6">
+									<a id="insta-link-2" href="#" target="_blank" rel="noopener">
+										<img id="insta-img" src="" alt="Latest Instagram post" class="img-responsive thumbnailpic">
+									</a>
+								</div>
+								<div class="col-6 articledescbox pl-2 pt-0">
+									<div class="articledesc" id="insta-caption"></div>
+								</div>
+							</div>
+							<div style="margin-top:8px;">
+								<a id="insta-link-3" href="#" target="_blank" rel="noopener" style="display:inline-block;background-color:#C9112B;color:white;border-radius:20px;padding:4px 14px;font-size:0.78rem;font-weight:700;text-decoration:none;">View on Instagram →</a>
+							</div>
+						</div>
+
+						<script>
+							document.getElementById("insta-link").href              = INSTA_URL;
+							document.getElementById("insta-link-2").href            = INSTA_URL;
+							document.getElementById("insta-link-3").href            = INSTA_URL;
+							document.getElementById("insta-img").src                = INSTA_IMG;
+							document.getElementById("insta-caption").textContent    = INSTA_CAPTION;
+						</script>
+
+						<hr color="#C9112B" style="opacity:0.3;">
+
+						<!-- Card 2: TikTok -->
+						<script>
+							var TIKTOK_URL     = "{{ site.data.social.tiktok.url }}";
+							var TIKTOK_IMG     = "{{ site.data.social.tiktok.image }}";
+							var TIKTOK_CAPTION = "{{ site.data.social.tiktok.caption }}";
+						</script>
+
+						<div class="articlecard pb-3">
+							<span class="articletitle h5 pt-4">
+								<a id="tiktok-link" href="#" target="_blank" rel="noopener" style="color:#37375E;">Latest on TikTok</a>
+							</span>
+							<div class="row no-gutters">
+								<div class="col-6">
+									<a id="tiktok-link-2" href="#" target="_blank" rel="noopener">
+										<img id="tiktok-img" src="" alt="Latest TikTok post" class="img-responsive thumbnailpic">
+									</a>
+								</div>
+								<div class="col-6 articledescbox pl-2 pt-0">
+									<div class="articledesc" id="tiktok-caption"></div>
+								</div>
+							</div>
+							<div style="margin-top:8px;">
+								<a id="tiktok-link-3" href="#" target="_blank" rel="noopener" style="display:inline-block;background-color:#37375E;color:white;border-radius:20px;padding:4px 14px;font-size:0.78rem;font-weight:700;text-decoration:none;">Watch on TikTok →</a>
+							</div>
+						</div>
+
+						<script>
+							document.getElementById("tiktok-link").href             = TIKTOK_URL;
+							document.getElementById("tiktok-link-2").href           = TIKTOK_URL;
+							document.getElementById("tiktok-link-3").href           = TIKTOK_URL;
+							document.getElementById("tiktok-img").src               = TIKTOK_IMG;
+							document.getElementById("tiktok-caption").textContent   = TIKTOK_CAPTION;
+						</script>
+
+						<hr color="#C9112B" style="opacity:0.3;">
+
+						<!-- Card 3: Substack (auto-updates) -->
+						<div class="articlecard pb-3" id="substack-rec-card">
+							<span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#C9112B;">Auto-updating</span>
+							<p style="font-size:0.8rem;color:#888;font-style:italic;margin:4px 0 8px;">Loading latest Substack post…</p>
+						</div>
+
+						<script>
+						(function() {
+							fetch("https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed")
+								.then(function(r) { return r.json(); })
+								.then(function(data) {
+									var post    = data.items[0];
+									var img     = post.thumbnail || (post.enclosure && post.enclosure.link) || "";
+									var plain   = post.description.replace(/<[^>]+>/g, "").trim();
+									var excerpt = plain.length > 120 ? plain.slice(0, 120).trim() + "…" : plain;
+									var imgHTML = img
+										? '<div class="col-6"><a href="' + post.link + '" target="_blank" rel="noopener"><img src="' + img + '" alt="" class="img-responsive thumbnailpic"></a></div>'
+										: "";
+									var descCol = img ? "col-6" : "col-12";
+									document.getElementById("substack-rec-card").innerHTML =
+										'<span class="articletitle h5 pt-4"><a href="' + post.link + '" target="_blank" rel="noopener" style="color:#37375E;">' + post.title + '</a></span>' +
+										'<div class="row no-gutters">' + imgHTML +
+											'<div class="' + descCol + ' articledescbox pl-2 pt-0"><div class="articledesc">' + excerpt + '</div></div>' +
+										'</div>' +
+										'<div style="margin-top:8px;"><a href="' + post.link + '" target="_blank" rel="noopener" style="display:inline-block;background-color:#C9112B;color:white;border-radius:20px;padding:4px 14px;font-size:0.78rem;font-weight:700;text-decoration:none;">Read on Substack →</a></div>';
+								})
+								.catch(function() {
+									document.getElementById("substack-rec-card").innerHTML =
+										'<span class="articletitle h5"><a href="https://workersmakepossible.substack.com/" style="color:#37375E;">Read our latest on Substack</a></span>';
+								});
+						})();
+						</script>
+
+					</div>
+					<!-- /recbox -->
+
+				</div>
+				<!-- /col-4 -->
+
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /start -->
+
 </div>
+<!-- /desktop-display -->
 
-<script>
-(function() {
-  var FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed";
 
-  fetch(FEED_URL)
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      var post = data.items[0];
-
-      /* ── Pull thumbnail ── */
-      var img = post.thumbnail || (post.enclosure && post.enclosure.link) || "";
-
-      /* ── Strip HTML from description, cap at 200 chars ── */
-      var plain = post.description.replace(/<[^>]+>/g, "").trim();
-      var excerpt = plain.length > 200 ? plain.slice(0, 200).trim() + "…" : plain;
-
-      /* ── Format date ── */
-      var date = post.pubDate
-        ? new Date(post.pubDate).toLocaleDateString("en-GB", { day:"numeric", month:"long", year:"numeric" })
-        : "";
-
-      /* ── Build HTML ── */
-      var imgHTML = img ? (
-        '<div style="width:100%; overflow:hidden; border-radius:16px; margin-bottom:16px;">' +
-          '<img src="' + img + '" alt="" style="width:100%; display:block; object-fit:cover; max-height:220px;">' +
-        '</div>'
-      ) : "";
-
-      var html =
-        '<div style="' +
-          'background-color:#FDD24F;' +
-          'border-radius:28px;' +
-          'border:3px solid #C9112B;' +
-          'padding:24px;' +
-          'width:100%;' +        /* spans full width of its container */
-        '">' +
-
-          /* label */
-          '<div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#C9112B;margin-bottom:12px;">Newest Commentary</div>' +
-
-          /* thumbnail */
-          imgHTML +
-
-          /* title */
-          '<h3 style="margin:0 0 8px;font-size:1.1rem;font-weight:700;line-height:1.4;">' +
-            '<a href="' + post.link + '" target="_blank" rel="noopener" style="color:#37375E;text-decoration:none;">' +
-              post.title +
-            '</a>' +
-          '</h3>' +
-
-          /* date */
-          (date ? '<p style="font-size:0.8rem;color:#555;margin:0 0 10px;">' + date + '</p>' : '') +
-
-          /* excerpt */
-          '<p style="font-size:0.92rem;color:#37375E;line-height:1.6;margin:0 0 16px;">' + excerpt + '</p>' +
-
-          /* CTA button */
-          '<a href="' + post.link + '" target="_blank" rel="noopener" style="' +
-            'display:inline-block;' +
-            'background-color:#C9112B;' +
-            'color:white;' +
-            'border-radius:20px;' +
-            'padding:8px 20px;' +
-            'font-size:0.85rem;' +
-            'font-weight:700;' +
-            'text-decoration:none;' +
-          '">Read on Substack →</a>' +
-
-        '</div>';
-
-      document.getElementById("latest-substack-box").innerHTML = html;
-    })
-    .catch(function() {
-      document.getElementById("substack-loading").innerHTML =
-        '<p style="margin:0;">Read our latest commentary on ' +
-        '<a href="https://workersmakepossible.substack.com/" style="color:#C9112B;font-weight:bold;">Substack</a>.</p>';
-    });
-})();
-</script>
-                   </div>
-
-                <div class="col-4 pl-5">
 <!-- ═══════════════════════════════════════════════════════════
-     RECOMMENDED BOX — Desktop
-     
-     HOW TO UPDATE:
-     - Instagram: change INSTA_URL, INSTA_IMG, INSTA_CAPTION
-     - TikTok:    change TIKTOK_URL, TIKTOK_IMG, TIKTOK_CAPTION
-     - Substack:  updates automatically — nothing to change!
+     MOBILE
 ═══════════════════════════════════════════════════════════ -->
+<div class="mobile-display">
 
-<div class="recbox container pl-4 pr-4">
-  <div class="h3 pt-4">Recommended</div>
-  <hr color="#37375E">
+	<style>
+		.h3 { color:#C9112B; }
 
-  <!-- ── CARD 1: Instagram (update manually) ── -->
-  <script>
-	var INSTA_URL     = "{{ site.data.social.instagram.url }}";
-	var INSTA_IMG     = "{{ site.data.social.instagram.image }}";
-    var INSTA_CAPTION = "{{ site.data.social.instagram.caption }}";
-</script>
+		/* ── Fixed header ── */
+		.mobile-header        { background-color:#FDD24F; border-bottom:2px solid #C9112B; }
+		.mobile-header-inner  { display:flex; align-items:center; padding:8px 16px; gap:10px; }
+		.mobile-logo          { height:44px; width:44px; object-fit:contain; }
+		.mobile-title         { font-weight:bold; color:#C9112B; font-size:1.1rem; flex:1; }
+		.mobile-menu-btn      { background:transparent; border:none; font-size:1.5rem; color:#37375E; padding:0 4px; }
+		.mobile-menu-btn:focus{ outline:none; box-shadow:none; }
 
-  <div class="articlecard pb-3">
-    <span class="articletitle h5 pt-4">
-      <a id="insta-link" href="#" target="_blank" rel="noopener" style="color:#37375E;">
-        Latest on Instagram
-      </a>
-    </span>
-    <div class="row no-gutters">
-      <div class="col-6">
-        <a id="insta-link-2" href="#" target="_blank" rel="noopener">
-          <img id="insta-img" src="" alt="Latest Instagram post" class="img-responsive thumbnailpic">
-        </a>
-      </div>
-      <div class="col-6 articledescbox pl-2 pt-0">
-        <div class="articledesc" id="insta-caption"></div>
-      </div>
-    </div>
-    <div style="margin-top:8px;">
-      <a id="insta-link-3" href="#" target="_blank" rel="noopener" style="
-        display:inline-block;
-        background-color:#C9112B;
-        color:white;
-        border-radius:20px;
-        padding:4px 14px;
-        font-size:0.78rem;
-        font-weight:700;
-        text-decoration:none;
-      ">View on Instagram →</a>
-    </div>
-  </div>
+		/* ── Page sections ── */
+		.start-mobile         { position:relative; top:0; }
+		.recbox-mobile        { background-color:#FDD24F; border-radius:28px; border:3px solid #C9112B; margin-bottom:20px; }
 
-  <script>
-    document.getElementById("insta-link").href    = INSTA_URL;
-    document.getElementById("insta-link-2").href  = INSTA_URL;
-    document.getElementById("insta-link-3").href  = INSTA_URL;
-    document.getElementById("insta-img").src      = INSTA_IMG;
-    document.getElementById("insta-caption").textContent = INSTA_CAPTION;
-  </script>
+		/* ── Responsive iframe ── */
+		.iframeholder-mobile    { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; }
+		.responsive-iframe-mobile { position:absolute; top:0; left:0; width:100%; height:100%; z-index:900; }
 
-  <hr color="#C9112B" style="opacity:0.3;">
+		/* ── Links ── */
+		a       { color:#37375E; }
+		a:hover { color:#37375E; text-decoration:none; }
 
-  <!-- ── CARD 2: TikTok (update manually) ── -->
-  <script>
-    var TIKTOK_URL     = "{{ site.data.social.tiktok.url }}";
-	var TIKTOK_IMG     = "{{ site.data.social.tiktok.image }}";
-	var TIKTOK_CAPTION = "{{ site.data.social.tiktok.caption }}";
-  </script>
+		/* ── Article cards ── */
+		.articledescbox { overflow:hidden; }
+		.articledesc    { margin-top:10px; overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:5; line-clamp:5; }
+		.thumbnailpic   { width:100%; margin-top:10px; }
 
-  <div class="articlecard pb-3">
-    <span class="articletitle h5 pt-4">
-      <a id="tiktok-link" href="#" target="_blank" rel="noopener" style="color:#37375E;">
-        Latest on TikTok
-      </a>
-    </span>
-    <div class="row no-gutters">
-      <div class="col-6">
-        <a id="tiktok-link-2" href="#" target="_blank" rel="noopener">
-          <img id="tiktok-img" src="" alt="Latest TikTok post" class="img-responsive thumbnailpic">
-        </a>
-      </div>
-      <div class="col-6 articledescbox pl-2 pt-0">
-        <div class="articledesc" id="tiktok-caption"></div>
-      </div>
-    </div>
-    <div style="margin-top:8px;">
-      <a id="tiktok-link-3" href="#" target="_blank" rel="noopener" style="
-        display:inline-block;
-        background-color:#37375E;
-        color:white;
-        border-radius:20px;
-        padding:4px 14px;
-        font-size:0.78rem;
-        font-weight:700;
-        text-decoration:none;
-      ">Watch on TikTok →</a>
-    </div>
-  </div>
+		/* ── About section ── */
+		.abouttitle-mobile { font-weight:600; color:#C9112B; }
+	</style>
 
-  <script>
-    document.getElementById("tiktok-link").href    = TIKTOK_URL;
-    document.getElementById("tiktok-link-2").href  = TIKTOK_URL;
-    document.getElementById("tiktok-link-3").href  = TIKTOK_URL;
-    document.getElementById("tiktok-img").src      = TIKTOK_IMG;
-    document.getElementById("tiktok-caption").textContent = TIKTOK_CAPTION;
-  </script>
+	<!-- Mobile sticky header -->
+	<div class="mobile-header sticky-top">
+		<div class="mobile-header-inner">
+			<img src="{{ site.logo_url }}" class="mobile-logo" alt="WMP logo">
+			<span class="mobile-title">{{ site.title }}</span>
+			<div class="dropdown ml-auto">
+				<button class="btn mobile-menu-btn dropdown-toggle" type="button" id="mobileNavDropdown"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="bi bi-list"></i>
+				</button>
+				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="mobileNavDropdown">
+					{% for link in site.nav_links %}
+					<a class="dropdown-item {% if link.active %}active{% endif %}" href="{{ link.url }}">{{ link.label }}</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
 
-  <hr color="#C9112B" style="opacity:0.3;">
+	<!-- Video -->
+	<div class="start-mobile">
+		<div class="container px-0">
+			<div class="iframeholder-mobile">
+				<iframe
+					class="responsive-iframe-mobile"
+					src="https://www.youtube.com/embed/m-WORbBIMA0"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
 
-  <!-- ── CARD 3: Substack (auto-updates) ── -->
-  <div class="articlecard pb-3" id="substack-rec-card">
-    <span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#C9112B;">
-      Auto-updating
-    </span>
-    <p style="font-size:0.8rem;color:#888;font-style:italic;margin:4px 0 8px;">Loading latest Substack post…</p>
-  </div>
+	<!-- About text -->
+	<div class="container pt-3 px-4">
+		<div class="h3 abouttitle-mobile">
+			Workers Make Possible is committed to advancing workers' rights in Singapore.
+		</div>
+		<div class="abouttext mt-2">
+			We deepen public understanding of labour issues by offering critical labour analysis, rallying workers around key demands, and supporting workers by providing direct assistance when they face crises. Since workers' perspectives are not often covered by the mainstream media, our work is also focused on telling these important stories, and mobilising wider public support.
+		</div>
+	</div>
 
-  <script>
-  (function() {
-    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed")
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        var post  = data.items[0];
-        var img   = post.thumbnail || (post.enclosure && post.enclosure.link) || "";
-        var plain = post.description.replace(/<[^>]+>/g, "").trim();
-        var excerpt = plain.length > 120 ? plain.slice(0, 120).trim() + "…" : plain;
+	<!-- Latest Substack embed — mobile -->
+	<div class="container px-4" style="margin-top:32px;">
+		<div id="latest-substack-box-mobile">
+			<div id="substack-loading-mobile" style="background-color:#FDD24F;border-radius:28px;border:3px solid #C9112B;padding:24px;text-align:center;color:#37375E;font-style:italic;">
+				Loading latest post…
+			</div>
+		</div>
+	</div>
 
-        var imgHTML = img
-          ? '<div class="col-6"><a href="' + post.link + '" target="_blank" rel="noopener"><img src="' + img + '" alt="" class="img-responsive thumbnailpic"></a></div>'
-          : "";
-        var descCol = img ? "col-6" : "col-12";
+	<script>
+	(function() {
+		var FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed";
+		fetch(FEED_URL)
+			.then(function(r) { return r.json(); })
+			.then(function(data) {
+				var post    = data.items[0];
+				var img     = post.thumbnail || (post.enclosure && post.enclosure.link) || "";
+				var plain   = post.description.replace(/<[^>]+>/g, "").trim();
+				var excerpt = plain.length > 200 ? plain.slice(0, 200).trim() + "…" : plain;
+				var date    = post.pubDate
+					? new Date(post.pubDate).toLocaleDateString("en-GB", { day:"numeric", month:"long", year:"numeric" })
+					: "";
+				var imgHTML = img
+					? '<div style="width:100%;overflow:hidden;border-radius:16px;margin-bottom:16px;"><img src="' + img + '" alt="" style="width:100%;display:block;object-fit:cover;max-height:220px;"></div>'
+					: "";
+				var html =
+					'<div style="background-color:#FDD24F;border-radius:28px;border:3px solid #C9112B;padding:24px;width:100%;">' +
+						'<div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#C9112B;margin-bottom:12px;">Newest Commentary</div>' +
+						imgHTML +
+						'<h3 style="margin:0 0 8px;font-size:1.1rem;font-weight:700;line-height:1.4;"><a href="' + post.link + '" target="_blank" rel="noopener" style="color:#37375E;text-decoration:none;">' + post.title + '</a></h3>' +
+						(date ? '<p style="font-size:0.8rem;color:#555;margin:0 0 10px;">' + date + '</p>' : '') +
+						'<p style="font-size:0.92rem;color:#37375E;line-height:1.6;margin:0 0 16px;">' + excerpt + '</p>' +
+						'<a href="' + post.link + '" target="_blank" rel="noopener" style="display:inline-block;background-color:#C9112B;color:white;border-radius:20px;padding:8px 20px;font-size:0.85rem;font-weight:700;text-decoration:none;">Read on Substack →</a>' +
+					'</div>';
+				document.getElementById("latest-substack-box-mobile").innerHTML = html;
+			})
+			.catch(function() {
+				document.getElementById("substack-loading-mobile").innerHTML =
+					'<p style="margin:0;">Read our latest commentary on <a href="https://workersmakepossible.substack.com/" style="color:#C9112B;font-weight:bold;">Substack</a>.</p>';
+			});
+	})();
+	</script>
 
-        document.getElementById("substack-rec-card").innerHTML =
-          '<span class="articletitle h5 pt-4">' +
-            '<a href="' + post.link + '" target="_blank" rel="noopener" style="color:#37375E;">' +
-              post.title +
-            '</a>' +
-          '</span>' +
-          '<div class="row no-gutters">' +
-            imgHTML +
-            '<div class="' + descCol + ' articledescbox pl-2 pt-0">' +
-              '<div class="articledesc">' + excerpt + '</div>' +
-            '</div>' +
-          '</div>' +
-          '<div style="margin-top:8px;">' +
-            '<a href="' + post.link + '" target="_blank" rel="noopener" style="' +
-              'display:inline-block;background-color:#C9112B;color:white;' +
-              'border-radius:20px;padding:4px 14px;font-size:0.78rem;font-weight:700;text-decoration:none;' +
-            '">Read on Substack →</a>' +
-          '</div>';
-      })
-      .catch(function() {
-        document.getElementById("substack-rec-card").innerHTML =
-          '<span class="articletitle h5"><a href="https://workersmakepossible.substack.com/" style="color:#37375E;">Read our latest on Substack</a></span>';
-      });
-  })();
-  </script>
+	<!-- Recommended box — mobile -->
+	<div class="container px-4 pb-5 mt-4">
+
+		<!-- HOW TO UPDATE:
+		     Instagram: change site.data.social.instagram.*
+		     TikTok:    change site.data.social.tiktok.*
+		     Substack:  auto-updates, nothing to change -->
+
+		<div class="recbox-mobile container pl-4 pr-4">
+			<div class="h3 pt-4">Recommended</div>
+			<hr color="#37375E">
+
+			<!-- Card 1: Instagram -->
+			<script>
+				var INSTA_URL_M     = INSTA_URL;
+				var INSTA_IMG_M     = INSTA_IMG;
+				var INSTA_CAPTION_M = INSTA_CAPTION;
+			</script>
+
+			<div class="articlecard pb-3">
+				<span class="articletitle h5 pt-4">
+					<a id="insta-link-m" href="#" target="_blank" rel="noopener" style="color:#37375E;">Latest on Instagram</a>
+				</span>
+				<div class="row no-gutters">
+					<div class="col-6">
+						<a id="insta-link-2-m" href="#" target="_blank" rel="noopener">
+							<img id="insta-img-m" src="" alt="Latest Instagram post" class="img-responsive thumbnailpic">
+						</a>
+					</div>
+					<div class="col-6 articledescbox pl-2 pt-0">
+						<div class="articledesc" id="insta-caption-m"></div>
+					</div>
+				</div>
+				<div style="margin-top:8px;">
+					<a id="insta-link-3-m" href="#" target="_blank" rel="noopener" style="display:inline-block;background-color:#C9112B;color:white;border-radius:20px;padding:4px 14px;font-size:0.78rem;font-weight:700;text-decoration:none;">View on Instagram →</a>
+				</div>
+			</div>
+
+			<script>
+				document.getElementById("insta-link-m").href           = INSTA_URL_M;
+				document.getElementById("insta-link-2-m").href         = INSTA_URL_M;
+				document.getElementById("insta-link-3-m").href         = INSTA_URL_M;
+				document.getElementById("insta-img-m").src             = INSTA_IMG_M;
+				document.getElementById("insta-caption-m").textContent = INSTA_CAPTION_M;
+			</script>
+
+			<hr color="#C9112B" style="opacity:0.3;">
+
+			<!-- Card 2: TikTok -->
+			<script>
+				var TIKTOK_URL_M     = TIKTOK_URL;
+				var TIKTOK_IMG_M     = TIKTOK_IMG;
+				var TIKTOK_CAPTION_M = TIKTOK_CAPTION;
+			</script>
+
+			<div class="articlecard pb-3">
+				<span class="articletitle h5 pt-4">
+					<a id="tiktok-link-m" href="#" target="_blank" rel="noopener" style="color:#37375E;">Latest on TikTok</a>
+				</span>
+				<div class="row no-gutters">
+					<div class="col-6">
+						<a id="tiktok-link-2-m" href="#" target="_blank" rel="noopener">
+							<img id="tiktok-img-m" src="" alt="Latest TikTok post" class="img-responsive thumbnailpic">
+						</a>
+					</div>
+					<div class="col-6 articledescbox pl-2 pt-0">
+						<div class="articledesc" id="tiktok-caption-m"></div>
+					</div>
+				</div>
+				<div style="margin-top:8px;">
+					<a id="tiktok-link-3-m" href="#" target="_blank" rel="noopener" style="display:inline-block;background-color:#37375E;color:white;border-radius:20px;padding:4px 14px;font-size:0.78rem;font-weight:700;text-decoration:none;">Watch on TikTok →</a>
+				</div>
+			</div>
+
+			<script>
+				document.getElementById("tiktok-link-m").href           = TIKTOK_URL_M;
+				document.getElementById("tiktok-link-2-m").href         = TIKTOK_URL_M;
+				document.getElementById("tiktok-link-3-m").href         = TIKTOK_URL_M;
+				document.getElementById("tiktok-img-m").src             = TIKTOK_IMG_M;
+				document.getElementById("tiktok-caption-m").textContent = TIKTOK_CAPTION_M;
+			</script>
+
+			<hr color="#C9112B" style="opacity:0.3;">
+
+			<!-- Card 3: Substack (auto-updates) -->
+			<div class="articlecard pb-3" id="substack-rec-card-mobile">
+				<span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#C9112B;">Auto-updating</span>
+				<p style="font-size:0.8rem;color:#888;font-style:italic;margin:4px 0 8px;">Loading latest Substack post…</p>
+			</div>
+
+			<script>
+			(function() {
+				fetch("https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed")
+					.then(function(r) { return r.json(); })
+					.then(function(data) {
+						var post    = data.items[0];
+						var img     = post.thumbnail || (post.enclosure && post.enclosure.link) || "";
+						var plain   = post.description.replace(/<[^>]+>/g, "").trim();
+						var excerpt = plain.length > 120 ? plain.slice(0, 120).trim() + "…" : plain;
+						var imgHTML = img
+							? '<div class="col-6"><a href="' + post.link + '" target="_blank" rel="noopener"><img src="' + img + '" alt="" class="img-responsive thumbnailpic"></a></div>'
+							: "";
+						var descCol = img ? "col-6" : "col-12";
+						document.getElementById("substack-rec-card-mobile").innerHTML =
+							'<span class="articletitle h5 pt-4"><a href="' + post.link + '" target="_blank" rel="noopener" style="color:#37375E;">' + post.title + '</a></span>' +
+							'<div class="row no-gutters">' + imgHTML +
+								'<div class="' + descCol + ' articledescbox pl-2 pt-0"><div class="articledesc">' + excerpt + '</div></div>' +
+							'</div>' +
+							'<div style="margin-top:8px;"><a href="' + post.link + '" target="_blank" rel="noopener" style="display:inline-block;background-color:#C9112B;color:white;border-radius:20px;padding:4px 14px;font-size:0.78rem;font-weight:700;text-decoration:none;">Read on Substack →</a></div>';
+					})
+					.catch(function() {
+						document.getElementById("substack-rec-card-mobile").innerHTML =
+							'<span class="articletitle h5"><a href="https://workersmakepossible.substack.com/" style="color:#37375E;">Read our latest on Substack</a></span>';
+					});
+			})();
+			</script>
+
+		</div>
+		<!-- /recbox-mobile -->
+
+	</div>
+	<!-- /container -->
+
+	<!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 
 </div>
-<!-- end recbox -->
-					
-                </div>
-            </div>
-            
-        </div>
-        
-    </div>
-    
-      
-    
-    </div>
-
-<!--MOBILE DISPLAY-->
-	
-    <div class="mobile-display">
-        <style>
-
-            .h3{
-                color: #C9112B;
-            }
-
-            .start-mobile{
-                position: relative;
-                top: 50px;
-            }
-
-            .recbox-mobile{
-                background-color: #FDD24F;
-                border-radius: 28px;
-                border-width: 3px;
-                border-style: solid;
-                border-color: #C9112B;
-                margin-bottom: 20px;
-            }
-
-            .iframeholder-mobile{
-                position: relative;
-                padding-bottom: 56.25vw;
-                height:0;
-            }
-
-            .responsive-iframe-mobile{
-                position: relative;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 56.25vw;
-                z-index: 900;
-            }
-
-            a{
-                color:#37375E;
-            }
-
-            .articledescbox{
-                overflow: hidden;
-            }
-
-            .articledesc{
-                margin-top:10px;
-                overflow: hidden;
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 5; /* start-mobile showing ellipsis when 3rd line is reached */
-                        line-clamp: 5;
-            }
-
-            .abouttitle-mobile{
-                position: relative;
-                font-weight: 600;
-                color: #C9112B;
-                z-index: 1000;
-            }
-
-            .thumbnailpic{
-                width: 100%;
-                margin-top: 10px;
-            }
-        </style>
-        
-        
-  <!-- MOBILE NAV: single sticky bar with logo + title + hamburger -->
-  <div class="mobile-header sticky-top">
-    <div class="mobile-header-inner">
-      <img src="{{ site.logo_url }}" class="mobile-logo" alt="WMP logo">
-      <span class="mobile-title">{{ site.title }}</span>
-      <div class="dropdown ml-auto">
-        <button class="btn mobile-menu-btn dropdown-toggle" type="button" id="mobileNavDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="bi bi-list"></i>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="mobileNavDropdown">
-          {% for link in site.nav_links %}
-          <a class="dropdown-item {% if link.active %}active{% endif %}" href="{{ link.url }}">{{ link.label }}</a>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-        <nav class="navbar navbar-dark bg-dark">
-            <img src="https://github.com/workersmakepossible/labourday/blob/main/assets/wmp_logo.png?raw=true" 
-            class="" style="width:6vw">
-            <span style="color: white; font-weight: bold; text-align: left; font-size: 5vw; color:#FDD24F;"> 
-            WORKERS MAKE POSSIBLE
-            </span>
-            <button aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarToggleExternalContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
-        </nav>
-
-
-    </div>
-    
-
-    
-    <div class="start-mobile">
-        <div class="container">
-            <div class="row pl-5 pr-5 pb-5">
-                        <iframe
-                        class="responsive-iframe-mobile"
-                        src="https://www.youtube.com/embed/m-WORbBIMA0"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                    </div>
-        </div>
-    </div>
-
-    <div class="">
-        <div class="container pt-3 pl-5 pr-5">
-
-                    <div class="row h3 pl-3 abouttitle-mobile">
-                        Workers Make Possible is committed to advancing workers’ rights in Singapore. 
-                    </div>
-                    
-                    <div class="row pl-3 abouttext">
-                        We deepen public understanding of labour issues by offering critical labour analysis, rallying workers around key demands, and supporting workers by providing direct assistance when they face crises. Since workers' perspectives are not often covered by the mainstream media, our work is also focused on telling these important stories, and mobilising wider public support.
-                    </div>
-            
-        </div>
-        
-    </div>
-
-<!-- Latest Substack Post Embed — Workers Make Possible — MOBILE VERSION -->
-<!-- Drop this snippet in your mobile section -->
-
-<div id="latest-substack-box-mobile" style="margin-top: 32px;">
-  <!-- Loading state -->
-  <div id="substack-loading-mobile" style="
-    background-color: #FDD24F;
-    border-radius: 28px;
-    border: 3px solid #C9112B;
-    padding: 24px;
-    text-align: center;
-    color: #37375E;
-    font-style: italic;
-  ">Loading latest post…</div>
-</div>
-
-<script>
-(function() {
-  var FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed";
-
-  fetch(FEED_URL)
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      var post = data.items[0];
-
-      /* ── Pull thumbnail ── */
-      var img = post.thumbnail || (post.enclosure && post.enclosure.link) || "";
-
-      /* ── Strip HTML from description, cap at 200 chars ── */
-      var plain = post.description.replace(/<[^>]+>/g, "").trim();
-      var excerpt = plain.length > 200 ? plain.slice(0, 200).trim() + "…" : plain;
-
-      /* ── Format date ── */
-      var date = post.pubDate
-        ? new Date(post.pubDate).toLocaleDateString("en-GB", { day:"numeric", month:"long", year:"numeric" })
-        : "";
-
-      /* ── Build HTML ── */
-      var imgHTML = img ? (
-        '<div style="width:100%; overflow:hidden; border-radius:16px; margin-bottom:16px;">' +
-          '<img src="' + img + '" alt="" style="width:100%; display:block; object-fit:cover; max-height:220px;">' +
-        '</div>'
-      ) : "";
-
-      var html =
-        '<div style="' +
-          'background-color:#FDD24F;' +
-          'border-radius:28px;' +
-          'border:3px solid #C9112B;' +
-          'padding:24px;' +
-          'width:100%;' +
-        '">' +
-
-          /* label */
-          '<div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#C9112B;margin-bottom:12px;">Newest Commentary</div>' +
-
-          /* thumbnail */
-          imgHTML +
-
-          /* title */
-          '<h3 style="margin:0 0 8px;font-size:1.1rem;font-weight:700;line-height:1.4;">' +
-            '<a href="' + post.link + '" target="_blank" rel="noopener" style="color:#37375E;text-decoration:none;">' +
-              post.title +
-            '</a>' +
-          '</h3>' +
-
-          /* date */
-          (date ? '<p style="font-size:0.8rem;color:#555;margin:0 0 10px;">' + date + '</p>' : '') +
-
-          /* excerpt */
-          '<p style="font-size:0.92rem;color:#37375E;line-height:1.6;margin:0 0 16px;">' + excerpt + '</p>' +
-
-          /* CTA button */
-          '<a href="' + post.link + '" target="_blank" rel="noopener" style="' +
-            'display:inline-block;' +
-            'background-color:#C9112B;' +
-            'color:white;' +
-            'border-radius:20px;' +
-            'padding:8px 20px;' +
-            'font-size:0.85rem;' +
-            'font-weight:700;' +
-            'text-decoration:none;' +
-          '">Read on Substack →</a>' +
-
-        '</div>';
-
-      document.getElementById("latest-substack-box-mobile").innerHTML = html;
-    })
-    .catch(function() {
-      document.getElementById("substack-loading-mobile").innerHTML =
-        '<p style="margin:0;">Read our latest commentary on ' +
-        '<a href="https://workersmakepossible.substack.com/" style="color:#C9112B;font-weight:bold;">Substack</a>.</p>';
-    });
-})();
-</script>
-
-
-    <div class="p-5">
-        <div class="container">
-            <div class="row justify-content-center">
-
-                <div>
-<!-- ═══════════════════════════════════════════════════════════
-     RECOMMENDED BOX — Mobile
-     
-     HOW TO UPDATE:
-     - Instagram: change INSTA_URL_M, INSTA_IMG_M, INSTA_CAPTION_M
-     - TikTok:    change TIKTOK_URL_M, TIKTOK_IMG_M, TIKTOK_CAPTION_M
-     - Substack:  updates automatically — nothing to change!
-═══════════════════════════════════════════════════════════ -->
-
-<div class="recbox-mobile container pl-4 pr-4">
-  <div class="h3 pt-4">Recommended</div>
-  <hr color="#37375E">
-
-  <!-- ── CARD 1: Instagram (update manually) ── -->
-  <script>
-    var INSTA_URL_M     = INSTA_URL;
-	var INSTA_IMG_M     = INSTA_IMG;
-	var INSTA_CAPTION_M = INSTA_CAPTION;
-  </script>
-
-  <div class="articlecard pb-3">
-    <span class="articletitle h5 pt-4">
-      <a id="insta-link-m" href="#" target="_blank" rel="noopener" style="color:#37375E;">
-        Latest on Instagram
-      </a>
-    </span>
-    <div class="row no-gutters">
-      <div class="col-6">
-        <a id="insta-link-2-m" href="#" target="_blank" rel="noopener">
-          <img id="insta-img-m" src="" alt="Latest Instagram post" class="img-responsive thumbnailpic">
-        </a>
-      </div>
-      <div class="col-6 articledescbox pl-2 pt-0">
-        <div class="articledesc" id="insta-caption-m"></div>
-      </div>
-    </div>
-    <div style="margin-top:8px;">
-      <a id="insta-link-3-m" href="#" target="_blank" rel="noopener" style="
-        display:inline-block;
-        background-color:#C9112B;
-        color:white;
-        border-radius:20px;
-        padding:4px 14px;
-        font-size:0.78rem;
-        font-weight:700;
-        text-decoration:none;
-      ">View on Instagram →</a>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById("insta-link-m").href    = INSTA_URL_M;
-    document.getElementById("insta-link-2-m").href  = INSTA_URL_M;
-    document.getElementById("insta-link-3-m").href  = INSTA_URL_M;
-    document.getElementById("insta-img-m").src      = INSTA_IMG_M;
-    document.getElementById("insta-caption-m").textContent = INSTA_CAPTION_M;
-  </script>
-
-  <hr color="#C9112B" style="opacity:0.3;">
-
-  <!-- ── CARD 2: TikTok (update manually) ── -->
-  <script>
-    var TIKTOK_URL_M     = TIKTOK_URL;
-	var TIKTOK_IMG_M     = TIKTOK_IMG;
-	var TIKTOK_CAPTION_M = TIKTOK_CAPTION;
-  </script>
-
-  <div class="articlecard pb-3">
-    <span class="articletitle h5 pt-4">
-      <a id="tiktok-link-m" href="#" target="_blank" rel="noopener" style="color:#37375E;">
-        Latest on TikTok
-      </a>
-    </span>
-    <div class="row no-gutters">
-      <div class="col-6">
-        <a id="tiktok-link-2-m" href="#" target="_blank" rel="noopener">
-          <img id="tiktok-img-m" src="" alt="Latest TikTok post" class="img-responsive thumbnailpic">
-        </a>
-      </div>
-      <div class="col-6 articledescbox pl-2 pt-0">
-        <div class="articledesc" id="tiktok-caption-m"></div>
-      </div>
-    </div>
-    <div style="margin-top:8px;">
-      <a id="tiktok-link-3-m" href="#" target="_blank" rel="noopener" style="
-        display:inline-block;
-        background-color:#37375E;
-        color:white;
-        border-radius:20px;
-        padding:4px 14px;
-        font-size:0.78rem;
-        font-weight:700;
-        text-decoration:none;
-      ">Watch on TikTok →</a>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById("tiktok-link-m").href    = TIKTOK_URL_M;
-    document.getElementById("tiktok-link-2-m").href  = TIKTOK_URL_M;
-    document.getElementById("tiktok-link-3-m").href  = TIKTOK_URL_M;
-    document.getElementById("tiktok-img-m").src      = TIKTOK_IMG_M;
-    document.getElementById("tiktok-caption-m").textContent = TIKTOK_CAPTION_M;
-  </script>
-
-  <hr color="#C9112B" style="opacity:0.3;">
-
-  <!-- ── CARD 3: Substack (auto-updates) ── -->
-  <div class="articlecard pb-3" id="substack-rec-card-mobile">
-    <span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#C9112B;">
-      Auto-updating
-    </span>
-    <p style="font-size:0.8rem;color:#888;font-style:italic;margin:4px 0 8px;">Loading latest Substack post…</p>
-  </div>
-
-  <script>
-  (function() {
-    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed")
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        var post    = data.items[0];
-        var img     = post.thumbnail || (post.enclosure && post.enclosure.link) || "";
-        var plain   = post.description.replace(/<[^>]+>/g, "").trim();
-        var excerpt = plain.length > 120 ? plain.slice(0, 120).trim() + "…" : plain;
-
-        var imgHTML = img
-          ? '<div class="col-6"><a href="' + post.link + '" target="_blank" rel="noopener"><img src="' + img + '" alt="" class="img-responsive thumbnailpic"></a></div>'
-          : "";
-        var descCol = img ? "col-6" : "col-12";
-
-        document.getElementById("substack-rec-card-mobile").innerHTML =
-          '<span class="articletitle h5 pt-4">' +
-            '<a href="' + post.link + '" target="_blank" rel="noopener" style="color:#37375E;">' +
-              post.title +
-            '</a>' +
-          '</span>' +
-          '<div class="row no-gutters">' +
-            imgHTML +
-            '<div class="' + descCol + ' articledescbox pl-2 pt-0">' +
-              '<div class="articledesc">' + excerpt + '</div>' +
-            '</div>' +
-          '</div>' +
-          '<div style="margin-top:8px;">' +
-            '<a href="' + post.link + '" target="_blank" rel="noopener" style="' +
-              'display:inline-block;background-color:#C9112B;color:white;' +
-              'border-radius:20px;padding:4px 14px;font-size:0.78rem;font-weight:700;text-decoration:none;' +
-            '">Read on Substack →</a>' +
-          '</div>';
-      })
-      .catch(function() {
-        document.getElementById("substack-rec-card-mobile").innerHTML =
-          '<span class="articletitle h5"><a href="https://workersmakepossible.substack.com/" style="color:#37375E;">Read our latest on Substack</a></span>';
-      });
-  })();
-  </script>
-
-</div>
-<!-- end recbox-mobile -->
-					
-                </div>
-            </div>
-            
-        </div>
-        
-    </div>
-       </div>
-    
-    
-
-
-<!-- Optional JavaScript -->
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
-            </script> 
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js">
-            </script> 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js">
-            </script>
+<!-- /mobile-display -->
 
 </body>
 </html>
