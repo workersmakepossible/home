@@ -32,7 +32,7 @@ nav_links:
     active: false
   - label: Labour Day
     url: "https://workersmakepossible.com/labourday"
-    active: true
+    active: false
   - label: End Lorry Rides, Save Workers' Lives
     url: "https://endlorryrides.com"
     active: false
