@@ -1,10 +1,8 @@
 ---
 ---
 <!DOCTYPE html>
-
 <!-- supa cool coder made this :D-->
 <!-- revolutionary love 4eva-->
-
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -13,7 +11,6 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="{{ '/assets/css/labourday.css' | relative_url }}">
-
 	<style media="all">
 		.mobile-display  { display: none; }
 		.desktop-display { display: block; }
@@ -22,17 +19,13 @@
 			.mobile-display  { display: block; }
 		}
 	</style>
-
 	<title>Workers Make Possible!</title>
 </head>
-
 <body>
-
 <!-- ═══════════════════════════════════════════════════════════
      DESKTOP
 ═══════════════════════════════════════════════════════════ -->
 <div class="desktop-display">
-
 	<style>
 		/* ── Layout chrome ── */
 		.titlebanner  { background-color:#FDD24F; height:60px; position:fixed; top:0; left:0; z-index:999; }
@@ -45,68 +38,34 @@
 		.navbutton:hover    { background-color:#FDD24F; font-weight:bold; }
 		.currentpage  { background-color:#FDD24F; font-weight:bold; }
 		.moveleft     { margin-left:130px; }
-
 		/* ── Page start (offset for fixed bars) ── */
 		.start        { position:relative; top:130px; padding-bottom:130px; }
-
 		/* ── Cards / boxes ── */
 		.recbox       { background-color:#FDD24F; border-radius:28px; border:3px solid #C9112B; margin-bottom:20px; }
-
 		/* ── Responsive iframe ── */
 		.iframeholder     { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; }
 		.responsive-iframe{ position:absolute; top:0; left:0; width:100%; height:100%; z-index:900; }
-
 		/* ── Links ── */
 		a       { color:#37375E; }
 		a:hover { color:#37375E; text-decoration:none; }
-
 		/* ── Article cards ── */
 		.articledescbox { overflow:hidden; }
 		.articledesc    { margin-top:10px; overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:5; line-clamp:5; }
 		.thumbnailpic   { width:100%; margin-top:10px; }
-
 		/* ── About section ── */
 		.abouttitle     { position:relative; padding-top:24px; font-weight:600; color:#C9112B; }
-
 		/* ── Headings ── */
 		.h3 { color:#C9112B; }
 	</style>
-
 	<!-- Fixed nav chrome -->
-<div class="titlebanner container-fluid">
-  <!-- SOCIAL ICONS — desktop -->
-  <div style="position:fixed; top:0; right:16px; height:60px; display:flex; align-items:center; gap:8px; z-index:1000;">
-    <a href="https://www.instagram.com/workersmakepossible/" target="_blank" rel="noopener" title="Instagram"
-       style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:#C9112B;border-radius:50%;text-decoration:none;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
-      </svg>
-    </a>
-    <a href="https://www.tiktok.com/@workersmakepossible" target="_blank" rel="noopener" title="TikTok"
-       style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:#C9112B;border-radius:50%;text-decoration:none;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white">
-        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
-      </svg>
-    </a>
-    <a href="https://www.facebook.com/workersmakepossible/" target="_blank" rel="noopener" title="Facebook"
-       style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:#C9112B;border-radius:50%;text-decoration:none;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="white">
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-      </svg>
-    </a>
-    <a href="mailto:workersmakepossible@gmail.com" title="Email"
-       style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:#C9112B;border-radius:50%;text-decoration:none;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-        <polyline points="22,6 12,13 2,6"/>
-      </svg>
-    </a>
-  </div>
-</div>
-<div class="title container h1"><span class="moveleft">Workers Make Possible</span></div>
-
+	<div class="titlebanner container-fluid"></div>
+	<div class="title container h1"><span class="moveleft">Workers Make Possible</span></div>
+	<div class="container h1">
+		<button class="logo btn btn-lg btn-block">
+			<img src="https://github.com/workersmakepossible/labourday/blob/main/assets/wmp_logo.png?raw=true"
+				class="deskybutton img-responsive" alt="WMP logo">
+		</button>
+	</div>
 	<div class="navbanner container-fluid">
 		<div class="container">
 			<div class="row">
@@ -118,15 +77,12 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- Page content -->
 	<div class="start">
 		<div class="container">
 			<div class="row justify-content-center">
-
 				<!-- Left column: video + about + Substack embed -->
 				<div class="col-8">
-
 					<!-- Responsive iframe wrapper (height:0 + padding-bottom trick requires no extra row wrapper) -->
 					<div class="iframeholder">
 						<iframe
@@ -137,19 +93,16 @@
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 							allowfullscreen></iframe>
 					</div>
-
 					<div class="h3 abouttitle">Workers Make Possible is committed to advancing workers' rights in Singapore.</div>
 					<div class="abouttext mt-2">
 						We deepen public understanding of labour issues by offering critical labour analysis, rallying workers around key demands, and supporting workers by providing direct assistance when they face crises. Since workers' perspectives are not often covered by the mainstream media, our work is also focused on telling these important stories, and mobilising wider public support.
 					</div>
-
 					<!-- Latest Substack embed (auto-updates) -->
 					<div id="latest-substack-box" style="margin-top:32px;">
 						<div id="substack-loading" style="background-color:#FDD24F;border-radius:28px;border:3px solid #C9112B;padding:24px;text-align:center;color:#37375E;font-style:italic;">
 							Loading latest post…
 						</div>
 					</div>
-
 					<script>
 					(function() {
 						var FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed";
@@ -183,29 +136,23 @@
 							});
 					})();
 					</script>
-
 				</div>
 				<!-- /col-8 -->
-
 				<!-- Right column: Recommended box -->
 				<div class="col-4 pl-5">
-
 					<!-- HOW TO UPDATE:
 					     Instagram: change site.data.social.instagram.*
 					     TikTok:    change site.data.social.tiktok.*
 					     Substack:  auto-updates, nothing to change -->
-
 					<div class="recbox container pl-4 pr-4">
 						<div class="h3 pt-4">Recommended</div>
 						<hr color="#37375E">
-
 						<!-- Card 1: Instagram -->
 						<script>
 							var INSTA_URL     = "{{ site.data.social.instagram.url }}";
 							var INSTA_IMG     = "{{ site.data.social.instagram.image }}";
 							var INSTA_CAPTION = "{{ site.data.social.instagram.caption }}";
 						</script>
-
 						<div class="articlecard pb-3">
 							<span class="articletitle h5 pt-4">
 								<a id="insta-link" href="#" target="_blank" rel="noopener" style="color:#37375E;">Latest on Instagram</a>
@@ -224,7 +171,6 @@
 								<a id="insta-link-3" href="#" target="_blank" rel="noopener" style="display:inline-block;background-color:#C9112B;color:white;border-radius:20px;padding:4px 14px;font-size:0.78rem;font-weight:700;text-decoration:none;">View on Instagram →</a>
 							</div>
 						</div>
-
 						<script>
 							document.getElementById("insta-link").href              = INSTA_URL;
 							document.getElementById("insta-link-2").href            = INSTA_URL;
@@ -232,16 +178,13 @@
 							document.getElementById("insta-img").src                = INSTA_IMG;
 							document.getElementById("insta-caption").textContent    = INSTA_CAPTION;
 						</script>
-
 						<hr color="#C9112B" style="opacity:0.3;">
-
 						<!-- Card 2: TikTok -->
 						<script>
 							var TIKTOK_URL     = "{{ site.data.social.tiktok.url }}";
 							var TIKTOK_IMG     = "{{ site.data.social.tiktok.image }}";
 							var TIKTOK_CAPTION = "{{ site.data.social.tiktok.caption }}";
 						</script>
-
 						<div class="articlecard pb-3">
 							<span class="articletitle h5 pt-4">
 								<a id="tiktok-link" href="#" target="_blank" rel="noopener" style="color:#37375E;">Latest on TikTok</a>
@@ -260,7 +203,6 @@
 								<a id="tiktok-link-3" href="#" target="_blank" rel="noopener" style="display:inline-block;background-color:#37375E;color:white;border-radius:20px;padding:4px 14px;font-size:0.78rem;font-weight:700;text-decoration:none;">Watch on TikTok →</a>
 							</div>
 						</div>
-
 						<script>
 							document.getElementById("tiktok-link").href             = TIKTOK_URL;
 							document.getElementById("tiktok-link-2").href           = TIKTOK_URL;
@@ -268,15 +210,12 @@
 							document.getElementById("tiktok-img").src               = TIKTOK_IMG;
 							document.getElementById("tiktok-caption").textContent   = TIKTOK_CAPTION;
 						</script>
-
 						<hr color="#C9112B" style="opacity:0.3;">
-
 						<!-- Card 3: Substack (auto-updates) -->
 						<div class="articlecard pb-3" id="substack-rec-card">
 							<span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#C9112B;">Auto-updating</span>
 							<p style="font-size:0.8rem;color:#888;font-style:italic;margin:4px 0 8px;">Loading latest Substack post…</p>
 						</div>
-
 						<script>
 						(function() {
 							fetch("https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed")
@@ -303,32 +242,24 @@
 								});
 						})();
 						</script>
-
 					</div>
 					<!-- /recbox -->
-
 				</div>
 				<!-- /col-4 -->
-
 			</div>
 			<!-- /row -->
 		</div>
 		<!-- /container -->
 	</div>
 	<!-- /start -->
-
 </div>
 <!-- /desktop-display -->
-
-
 <!-- ═══════════════════════════════════════════════════════════
      MOBILE
 ═══════════════════════════════════════════════════════════ -->
 <div class="mobile-display">
-
 	<style>
 		.h3 { color:#C9112B; }
-
 		/* ── Fixed header ── */
 		.mobile-header        { background-color:#FDD24F; border-bottom:2px solid #C9112B; }
 		.mobile-header-inner  { display:flex; align-items:center; padding:8px 16px; gap:10px; }
@@ -336,63 +267,27 @@
 		.mobile-title         { font-weight:bold; color:#C9112B; font-size:1.1rem; flex:1; }
 		.mobile-menu-btn      { background:transparent; border:none; font-size:1.5rem; color:#37375E; padding:0 4px; }
 		.mobile-menu-btn:focus{ outline:none; box-shadow:none; }
-
 		/* ── Page sections ── */
 		.start-mobile         { position:relative; top:0; }
 		.recbox-mobile        { background-color:#FDD24F; border-radius:28px; border:3px solid #C9112B; margin-bottom:20px; }
-
 		/* ── Responsive iframe ── */
 		.iframeholder-mobile    { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; }
 		.responsive-iframe-mobile { position:absolute; top:0; left:0; width:100%; height:100%; z-index:900; }
-
 		/* ── Links ── */
 		a       { color:#37375E; }
 		a:hover { color:#37375E; text-decoration:none; }
-
 		/* ── Article cards ── */
 		.articledescbox { overflow:hidden; }
 		.articledesc    { margin-top:10px; overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:5; line-clamp:5; }
 		.thumbnailpic   { width:100%; margin-top:10px; }
-
 		/* ── About section ── */
 		.abouttitle-mobile { font-weight:600; color:#C9112B; }
 	</style>
-
 	<!-- Mobile sticky header -->
 	<div class="mobile-header sticky-top">
 		<div class="mobile-header-inner">
 			<img src="{{ site.logo_url }}" class="mobile-logo" alt="WMP logo">
-        <span class="mobile-title">{{ site.title }}</span>
-        <!-- SOCIAL ICONS — mobile -->
-        <div style="display:flex;align-items:center;gap:6px;">
-          <a href="https://www.instagram.com/workersmakepossible/" target="_blank" rel="noopener" title="Instagram"
-             style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;background:#C9112B;border-radius:50%;text-decoration:none;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
-            </svg>
-          </a>
-          <a href="https://www.tiktok.com/@workersmakepossible" target="_blank" rel="noopener" title="TikTok"
-             style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;background:#C9112B;border-radius:50%;text-decoration:none;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
-              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
-            </svg>
-          </a>
-          <a href="https://www.facebook.com/workersmakepossible/" target="_blank" rel="noopener" title="Facebook"
-             style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;background:#C9112B;border-radius:50%;text-decoration:none;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="white">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
-          </a>
-          <a href="mailto:workersmakepossible@gmail.com" title="Email"
-             style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;background:#C9112B;border-radius:50%;text-decoration:none;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-          </a>
-        </div>
+			<span class="mobile-title">{{ site.title }}</span>
 			<div class="dropdown ml-auto">
 				<button class="btn mobile-menu-btn dropdown-toggle" type="button" id="mobileNavDropdown"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -406,7 +301,6 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- Video -->
 	<div class="start-mobile">
 		<div class="container px-0">
@@ -421,7 +315,6 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- About text -->
 	<div class="container pt-3 px-4">
 		<div class="h3 abouttitle-mobile">
@@ -431,7 +324,6 @@
 			We deepen public understanding of labour issues by offering critical labour analysis, rallying workers around key demands, and supporting workers by providing direct assistance when they face crises. Since workers' perspectives are not often covered by the mainstream media, our work is also focused on telling these important stories, and mobilising wider public support.
 		</div>
 	</div>
-
 	<!-- Latest Substack embed — mobile -->
 	<div class="container px-4" style="margin-top:32px;">
 		<div id="latest-substack-box-mobile">
@@ -440,7 +332,6 @@
 			</div>
 		</div>
 	</div>
-
 	<script>
 	(function() {
 		var FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed";
@@ -474,26 +365,21 @@
 			});
 	})();
 	</script>
-
 	<!-- Recommended box — mobile -->
 	<div class="container px-4 pb-5 mt-4">
-
 		<!-- HOW TO UPDATE:
 		     Instagram: change site.data.social.instagram.*
 		     TikTok:    change site.data.social.tiktok.*
 		     Substack:  auto-updates, nothing to change -->
-
 		<div class="recbox-mobile container pl-4 pr-4">
 			<div class="h3 pt-4">Recommended</div>
 			<hr color="#37375E">
-
 			<!-- Card 1: Instagram -->
 			<script>
 				var INSTA_URL_M     = INSTA_URL;
 				var INSTA_IMG_M     = INSTA_IMG;
 				var INSTA_CAPTION_M = INSTA_CAPTION;
 			</script>
-
 			<div class="articlecard pb-3">
 				<span class="articletitle h5 pt-4">
 					<a id="insta-link-m" href="#" target="_blank" rel="noopener" style="color:#37375E;">Latest on Instagram</a>
@@ -512,7 +398,6 @@
 					<a id="insta-link-3-m" href="#" target="_blank" rel="noopener" style="display:inline-block;background-color:#C9112B;color:white;border-radius:20px;padding:4px 14px;font-size:0.78rem;font-weight:700;text-decoration:none;">View on Instagram →</a>
 				</div>
 			</div>
-
 			<script>
 				document.getElementById("insta-link-m").href           = INSTA_URL_M;
 				document.getElementById("insta-link-2-m").href         = INSTA_URL_M;
@@ -520,16 +405,13 @@
 				document.getElementById("insta-img-m").src             = INSTA_IMG_M;
 				document.getElementById("insta-caption-m").textContent = INSTA_CAPTION_M;
 			</script>
-
 			<hr color="#C9112B" style="opacity:0.3;">
-
 			<!-- Card 2: TikTok -->
 			<script>
 				var TIKTOK_URL_M     = TIKTOK_URL;
 				var TIKTOK_IMG_M     = TIKTOK_IMG;
 				var TIKTOK_CAPTION_M = TIKTOK_CAPTION;
 			</script>
-
 			<div class="articlecard pb-3">
 				<span class="articletitle h5 pt-4">
 					<a id="tiktok-link-m" href="#" target="_blank" rel="noopener" style="color:#37375E;">Latest on TikTok</a>
@@ -548,7 +430,6 @@
 					<a id="tiktok-link-3-m" href="#" target="_blank" rel="noopener" style="display:inline-block;background-color:#37375E;color:white;border-radius:20px;padding:4px 14px;font-size:0.78rem;font-weight:700;text-decoration:none;">Watch on TikTok →</a>
 				</div>
 			</div>
-
 			<script>
 				document.getElementById("tiktok-link-m").href           = TIKTOK_URL_M;
 				document.getElementById("tiktok-link-2-m").href         = TIKTOK_URL_M;
@@ -556,15 +437,12 @@
 				document.getElementById("tiktok-img-m").src             = TIKTOK_IMG_M;
 				document.getElementById("tiktok-caption-m").textContent = TIKTOK_CAPTION_M;
 			</script>
-
 			<hr color="#C9112B" style="opacity:0.3;">
-
 			<!-- Card 3: Substack (auto-updates) -->
 			<div class="articlecard pb-3" id="substack-rec-card-mobile">
 				<span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#C9112B;">Auto-updating</span>
 				<p style="font-size:0.8rem;color:#888;font-style:italic;margin:4px 0 8px;">Loading latest Substack post…</p>
 			</div>
-
 			<script>
 			(function() {
 				fetch("https://api.rss2json.com/v1/api.json?rss_url=https://workersmakepossible.substack.com/feed")
@@ -591,20 +469,15 @@
 					});
 			})();
 			</script>
-
 		</div>
 		<!-- /recbox-mobile -->
-
 	</div>
 	<!-- /container -->
-
 	<!-- Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-
 </div>
 <!-- /mobile-display -->
-
 </body>
 </html>
