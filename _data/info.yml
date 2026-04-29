@@ -29,8 +29,8 @@ rules:
 wear_red:
   heading: "WEAR RED!"
   text: "Wear your favourite, cool, comfy RED clothes to Labour Day!"
-  preorder_note: "You can also pre-order our Labour Day shirt and collect it from the Workers Make Possible booth on May 1st.
-  # <b>The preorder form is not ready yet, please check back soon.</b>"
+  preorder_note: "You can also pre-order our Labour Day shirt and collect it from the Workers Make Possible booth on May 1st."
+  #<b>The preorder form is not ready yet, please check back soon.</b>
   preorder_url: "tinyurl.com/ld26preorder"  # Add URL when form is ready
 
 # ─── ACCESSIBILITY ────────────────────────────────────────────
